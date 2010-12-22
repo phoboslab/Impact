@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Weltmeister</title>
+	<link rel="stylesheet" type="text/css" href="lib/weltmeister/weltmeister.css"/>
+	<script src="lib/weltmeister/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/weltmeister/jquery-ui-1.8.1.custom.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/impact/impact.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/weltmeister/weltmeister.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<div id="editor">
+	<div id="entityMenu">
+		<h2>New Entity</h2>
+	</div>
+	<canvas id="canvas"></canvas>
+	
+	<div id="menu">
+		<div>
+			<input type="button" id="levelSave" value="Save" class="button"/>
+			<input type="button" id="levelLoad" value="Load" class="button"/>
+			<input type="button" id="reloadImages" value="&#x21BA;" title="Reload Images" class="button"/>
+		</div>
+		
+		
+		<div id="layerContainer">
+			<h2>Layers</h2>
+			<div id="layerEntities" class="layer">
+				<span class="visible" title="Toggle Visibility (Shift+0)">&#x25a3;</span>
+				<span class="hotkey">0: </span>
+				<span class="name">entities</span>
+			</div>
+			<div id="layers"></div>
+			<div id="layerButtons">
+				<div class="button" id="buttonAddLayer" title="Add Layer">+</div>
+				<div class="button" id="buttonRemoveLayer" title="Remove Layer">x</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+		
+		
+		<div id="layerSettings">
+			<h2>Layer Settings</h2>
+			<dl>
+				<dt>Name:</dt><dd><input type="text" class="text" id="layerName"/></dd>
+				<dt>Tileset:</dt><dd><input type="text" class="text" id="layerTileset"/></dd>
+				<dt>Tilesize:</dt><dd><input type="text" class="number" id="layerTilesize"/></dd>
+				<dt>Dimensions:</dt>
+				<dd>
+					<input type="text" class="number" id="layerWidth"/>&#xd7;<input type="text" class="number" id="layerHeight"/>
+				</dd>
+				<dt>Distance:</dt><dd><input type="text" class="number" id="layerDistance"/></dd>
+				<dd>
+					<input type="checkbox" id="layerRepeat"/>
+					<label for="layerRepeat">Repeat</label>
+				</dd>
+				<dd>
+					<input type="checkbox" id="layerLinkWithCollision"/>
+					<label for="layerLinkWithCollision">Link with Collision</label>
+				</dd>
+				<dd><input type="button" id="buttonSaveLayerSettings" value="Apply Changes" class="button"/></dd>
+			</dl>
+		</div>
+		
+		<div id="entitySettings">
+			<h2>Entity Settings</h2>
+			<h3 id="entityClass">EntityClassName</h3>
+			<div id="entityDefinitions">
+				<div class="entityDefinition"><span class="key">x</span>:<span class="value">188</span></div>
+				<div class="entityDefinition"><span class="key">y</span>:<span class="value">269</span></div>
+			</div>
+			<dl id="entityDefinitionInput">
+				<dt>Key:</dt><dd><input type="text" class="text" id="entityKey"/></dd>
+				<dt>Value:</dt><dd><input type="text" class="text" id="entityValue"/></dd>
+			</dl>
+		</div>
+		
+	</div>
+	
+</div>
+
+</body>
+</html>

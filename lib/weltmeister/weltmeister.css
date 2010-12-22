@@ -1,0 +1,332 @@
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+h2 {
+	margin: 0;
+	padding: 12px 0 0 6px;
+	background-color: #000;
+	font-size: 80%;
+	text-transform: uppercase;
+	border-bottom: 1px solid #555;
+}
+
+h3 {
+	margin: 0;
+	padding: 8px 0 0 6px;
+	font-size: 80%;
+	display: block;
+}
+
+dt {
+	margin: 0;
+	padding: 0 0 0 6px;
+}
+
+dd {
+	margin: 0;
+	padding: 2px 0 8px 6px;
+}
+
+div.clear {
+	clear: both;
+}
+
+
+/* --- Input ------------------------------------------------------------------ */
+
+input {
+	font-size: 10pt;
+	background-color: #000;
+	border: 1px solid #333;
+	color: #fff;
+	margin: 0;
+	font-family: helvetica, arial, sans-serif;
+}
+
+input.text {
+	width: 134px;
+	padding: 1px;
+	margin: 0;
+}
+
+input.number {
+	width: 40px;
+	text-align: right;
+}
+
+input.button {
+	font-size: 90%;
+	border: 1px solid #000;
+	border-left: 1px solid #333;
+	border-top: 1px solid #333;
+	color: #fff;
+	font-weight: bold;
+	background-color: #000;
+	cursor: pointer;
+}
+
+input.button:active {
+	border: 1px solid #000;
+	border-right: 1px solid #333;
+	border-bottom: 1px solid #333;
+}
+
+
+/* --- Layout ------------------------------------------------------------------ */
+
+#editor {
+	margin: 2em auto 0 auto;
+	width: 960px;
+	margin-top: 2em;
+	position: relative;
+}
+
+#canvas {
+	border: 1px solid #333;
+	image-rendering: optimizeSpeed;
+	-webkit-interpolation-mode: nearest-neighbor;
+}
+
+#menu {
+	width: 150px;
+	float: right;
+}
+
+
+
+/* --- Layers ------------------------------------------------------------------ */
+
+#layerContainer {
+	background-color: #111;
+}
+
+#layers {
+	height: 150px;
+	overflow: auto;
+}
+
+#layerButtons {
+	background-color: #222;
+}
+
+#layerButtons div.button {
+	float: left;
+	cursor: pointer;
+	padding: 2px 0;
+	width: 26px;
+	text-align: center;
+	font-weight: bold;
+	border-left: 1px solid #333;
+	border-right: 1px solid #111;
+}
+#layerButtons div.button:hover { background-color: #444; }
+#buttonRemoveLayer { color: #f26522; }
+#buttonAddLayer { color: #ceff36; }
+
+.layer {
+	background-color: #111;
+	border-bottom: 1px solid #333;
+	padding: 6px 4px;
+	cursor: pointer;
+}
+
+#layerEntities { border-bottom: 3px solid #555; }
+
+.layer span.hotkey, .layer span.size { font-size: 80%; }
+.layerActive { background-color: #333; }
+
+
+#layerSettings {
+	background-color: #111;
+	display: none;
+}
+
+
+/* --- Entities ------------------------------------------------------------------ */
+
+#entitySettings {
+	background-color: #111;
+	display: none;
+}
+
+#entityDefinitions {
+	margin-top: 10px;
+	border-top: 1px solid #333;
+	height: 220px;
+	overflow: auto;
+}
+
+div.entityDefinition {
+	color: #aaa;
+	padding: 2px 0;
+	border-bottom: 1px solid #333;
+	cursor: pointer;
+}
+
+div.entityDefinition:hover {
+	background-color: #333;
+}
+
+div.entityDefinition .key {
+	width: 55%;
+	display: block;
+	float: left;
+	margin: 0 0px 0 0;
+	padding: 0;
+	text-align: right;
+	color: #fff;
+	overflow: hidden;
+}
+
+div.entityDefinition .value {
+	padding: 0 0 0 2px;
+	color: #fff;
+}
+
+
+dl#entityDefinitionInput {
+	padding: 8px 0;
+}
+
+dl#entityDefinitionInput dt {
+	width: 40px;
+	display: block;
+	float: left;
+	margin: 0 4px 0 0;
+	padding: 4px 0 0 0;
+	text-align: right;
+}
+
+dl#entityDefinitionInput dd {
+	display: block;
+	margin: 0;
+	padding: 2px 0;
+}
+
+#entityKey, #entityValue {
+	width: 95px;
+}
+
+#entityMenu {
+	background-color: #111;
+	display: none;
+	position: absolute;
+	border: 1px solid #333;
+	border-bottom: 5px solid #333;
+	min-width: 100px;
+}
+
+#entityMenu div {
+	padding: 2px;
+	color: #fff;
+	cursor: pointer;
+}
+
+#entityMenu div:hover {
+	background-color: #444;
+}
+
+
+
+/* --- Dialogs ------------------------------------------------------------------ */
+
+.selectFileDialog {
+	background-color: #111;
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	border: 1px solid #333;
+	border-top: 0;
+	border-bottom: 5px solid #333;;
+}
+
+.selectFileDialog a {
+	padding: 2px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+}
+
+.selectFileDialog a:hover {
+	background-color: #444;
+}
+
+div.console {
+	position: absolute;
+	top: 0;
+	left: 1px;
+	height: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	font-family: "Bitstream Vera Sans Mono", "Monaco", "Lucida Console", "Courier New", monospaced;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+div.consoleMessages {
+	overflow: auto;
+	height: 100%;
+}
+
+div.console input {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 12px;
+	padding: 2px 0;
+	border: 0;
+	background-color: rgba(0,0,0,0.2);
+	color: #ceff36;
+	font-family: "Bitstream Vera Sans Mono", "Monaco", "Lucida Console", "Courier New", monospaced;
+	font-size: 12px;
+}
+
+
+
+div.modalDialogBackground {
+	background-color: rgba(0,0,0,0.7);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+div.modalDialogBox {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	width: 400px;
+	margin-left: -220px;
+	background-color: #222;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	padding: 20px;
+	border: 1px solid #333;
+}
+
+div.modalDialogText {
+	font-size: 120%;
+}
+
+div.modalDialogButtons {
+	margin-top: 20px;
+	text-align: left;
+}
+
+div.modalDialogButtons input.button {
+	min-width: 100px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+input.modalDialogPath {
+	margin-top: 20px;
+	width: 100%;
+}
