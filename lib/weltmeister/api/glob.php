@@ -2,7 +2,7 @@
 require_once( 'config.php' );
 
 $pattern = WM_Config::$fileRoot . str_replace( '..', '', $_GET['glob'] );
-$files = glob( $pattern );
+$files = (array)glob( $pattern );
 
 $fileRootLength = strlen( WM_Config::$fileRoot );
 foreach( $files as $i => $f ) {
