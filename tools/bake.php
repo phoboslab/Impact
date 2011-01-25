@@ -34,7 +34,7 @@ class Baker {
 	public function bake( $inFiles, $outFile ) {
 		$this->fileCount = 0;
 		$this->bytesIn = 0;
-		$out = "// Built with IMPACT - impactjs.org\n\n";
+		$out = "/*! Built with IMPACT - impactjs.com */\n\n";
 		
 		foreach( $inFiles as $f ) {
 			$out .=	$this->load( $f );
