@@ -100,6 +100,10 @@ input.button:hover {
 	background-color: rgba(255,255,255,0.2);
 }
 
+input.button:active {
+	background-color: rgba(255,255,255,0.3);
+}
+
 input.text#layerName {
 	width:140px;
 }
@@ -386,30 +390,33 @@ input.modalDialogPath:focus {
 }
 
 #headerMenu {
-	position: relative;
-	z-index: 10;
-	height: 47px;
-	width: 100%;
-	background-color: #000;
+	position:relative;
+	z-index:10;
+	height:47px;
+	width:100%;
+	background: #131314;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0,#000000), color-stop(1,#2e3033));
+	background: -moz-linear-gradient(center bottom, #000000 0%, #2e3033 100%);
+	background: -o-linear-gradient(#2e3033, #000000);
 }
 
 #headerMenu span.headerTitle {
-	display: inline-block;
-	font-weight: bold;
-	font-size: 200%;
-	padding-left: 20px;
-	padding-top: 7px;
-	font-family: Helvetica, arial, sans-serif;
-	color: rgba(255,255,255,0.25);
+	display:inline-block;
+	font-weight:bold;
+	font-size:200%;
+	padding-left:20px;
+	padding-top:7px;
+	color:rgba(0,0,0,0.1);
+	text-shadow:0px -1px 0px rgba(255,255,255,0.4);
 }
 
 #headerMenu span.unsavedTitle {
-	display: inline-block;
-	font-weight: bold;
-	font-size: 240%;
-	padding-left: 0px;
-	color: #cc0000;
-	font-family: Helvetica, arial, sans-serif;
+	display:inline-block;
+	font-weight:bold;
+	font-size:240%;
+	padding-left:0px;
+	color:#cc0000;
+	text-shadow:0px 1px 1px rgba(0,0,0,0.1);
 }
 
 #headerMenu span.headerFloat {
