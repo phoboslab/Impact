@@ -1,29 +1,37 @@
 body {
 	background-color: #000;
 	color: #fff;
-	font-family: arial, helvetica, sans-serif;
+	font-family: sans-serif;
 	font-size: 10pt;
+	margin: 0px;
+	overflow: hidden;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	-webkit-font-smoothing: antialiased;
+	-webkit-user-select: none;
 }
 
 h2 {
-	margin: 0;
-	padding: 12px 0 0 6px;
+	margin: 0 0 4px 0;
+	padding: 4px 0 4px 6px;
 	background-color: #000;
-	font-size: 80%;
-	text-transform: uppercase;
-	border-bottom: 1px solid #555;
+	font-size: 100%;
+	color: #555;
+	xtext-transform: uppercase;
+	xborder-bottom: 1px solid #555;
 }
 
 h3 {
 	margin: 0;
-	padding: 8px 0 0 6px;
-	font-size: 80%;
+	font-size: 100%;
 	display: block;
 }
 
 dt {
 	margin: 0;
-	padding: 0 0 0 6px;
+	padding: 4px 0 0 6px;
+	display:inline;
+	float:left;
+	margin-right:5px;
 }
 
 dd {
@@ -31,148 +39,213 @@ dd {
 	padding: 2px 0 8px 6px;
 }
 
+dl {
+	margin:0;
+}
+
 div.clear {
 	clear: both;
 }
 
+label {
+	cursor: pointer;
+}
 
 /* --- Input ------------------------------------------------------------------ */
 
 input {
-	font-size: 10pt;
-	background-color: #000;
-	border: 1px solid #333;
+	background-color: rgba(0,0,0,0.5);
+	border: 1px solid rgb(50,50,50);
 	color: #fff;
 	margin: 0;
-	font-family: helvetica, arial, sans-serif;
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 10pt;
+	outline: none;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+	
+}
+
+input:focus{
+	border: 1px solid rgb(200,200,200);
 }
 
 input.text {
-	width: 134px;
 	padding: 1px;
 	margin: 0;
 }
 
 input.number {
-	width: 40px;
+	width: 30px;
 	text-align: right;
 }
 
 input.button {
 	font-size: 90%;
-	border: 1px solid #000;
-	border-left: 1px solid #333;
-	border-top: 1px solid #333;
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	color: #fff;
 	font-weight: bold;
-	background-color: #000;
+	background-color: rgba(255,255,255,0.1);
+	border:none;
+	border-top: 1px solid rgba(255,255,255,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 	cursor: pointer;
+	-webkit-transition: 0.1s linear;
 }
 
-input.button:active {
-	border: 1px solid #000;
-	border-right: 1px solid #333;
-	border-bottom: 1px solid #333;
+input.button:hover {
+	background-color: rgba(255,255,255,0.2);
 }
 
+input.text#layerName {
+	width:140px;
+}
+
+input.text#layerTileset {
+	width:138px;
+}
+
+input#levelSaveAs { margin-right: 10px; }
+input#levelLoad { margin-right: 10px; }
+input#reloadImages {margin-right: 10px;}
 
 /* --- Layout ------------------------------------------------------------------ */
 
 #editor {
-	margin: 2em auto 0 auto;
-	width: 960px;
-	margin-top: 2em;
+	margin: 0px;
 	position: relative;
 }
 
 #canvas {
-	border: 1px solid #333;
 	image-rendering: optimizeSpeed;
 	-webkit-interpolation-mode: nearest-neighbor;
 }
 
 #menu {
-	width: 150px;
+	width: 200px;
 	float: right;
+	position:absolute;
+	top:0px;
+	right:0px;
 }
-
-
 
 /* --- Layers ------------------------------------------------------------------ */
 
 #layerContainer {
-	background-color: #111;
+	background-color: rgba(0,0,0,0.95);
+	padding-right:2px;
 }
 
 #layers {
-	height: 150px;
+	max-height: 200px;
 	overflow: auto;
 }
 
-#layerButtons {
-	background-color: #222;
-}
-
-#layerButtons div.button {
-	float: left;
+#layerButtons div.button#buttonAddLayer {
+	position:absolute;
+	right: 0px;
+	top:-5px;
 	cursor: pointer;
-	padding: 2px 0;
-	width: 26px;
-	text-align: center;
+	padding: 10px;
+	color:rgba(255,255,255,0.5);
 	font-weight: bold;
-	border-left: 1px solid #333;
-	border-right: 1px solid #111;
+	font-size:110%;
+	margin-left:1px;
+	-webkit-transition: 0.1s linear;
+	-webkit-font-smoothing: none;
+	z-index:10;
 }
-#layerButtons div.button:hover { background-color: #444; }
-#buttonRemoveLayer { color: #f26522; }
-#buttonAddLayer { color: #ceff36; }
+#layerButtons div.button#buttonAddLayer:hover { color:rgba(255,255,255,1);}
+#layerButtons div.button#buttonAddLayer:active { color:rgba(255,255,255,1); text-shadow:none;}
 
 .layer {
-	background-color: #111;
-	border-bottom: 1px solid #333;
 	padding: 6px 4px;
 	cursor: pointer;
+	-webkit-transition: background-color 0.1s linear;
+	border-top: 1px solid rgba(255,255,255,0);
+	border-bottom: 1px solid rgba(255,255,255,0);
 }
 
-#layerEntities { border-bottom: 3px solid #555; }
+.layer:hover {
+	background-color: rgba(255,255,255,0.1);
+	border-top: 1px solid rgba(255,255,255,0.1);
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+}
 
-.layer span.hotkey, .layer span.size { font-size: 80%; }
-.layerActive { background-color: #333; }
+.layer:active {
+	background-color: rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
 
+.layerActive { 
+	background-color: rgba(255,255,255,0.1); 
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+
+#layerEntities { border-bottom: 1px solid #000; }
+
+.layer .visible {
+	background-color: rgba(255,255,255,0.2); 
+	text-indent: -99999px; 
+	display: inline-block;
+	width: 10px; 
+	height: 10px; 
+	margin-right: 7px; 
+	margin-left: 4px; 
+	-webkit-transition: 0.1s linear;
+}
+
+.layer .visible.specialVis{
+	margin-right: 2px;
+}
+
+.layer .checkedVis{ background-color: rgba(255,255,255,1); }
+.layer span.size { font-size: 75%; color: rgba(255,255,255,0.7); }
 
 #layerSettings {
-	background-color: #111;
+	background-color: rgba(0,0,0,0.95);
+	padding-top: 5px;
+	margin-top: 1px;
 	display: none;
 }
 
-
 /* --- Entities ------------------------------------------------------------------ */
+h3#entityClass {
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	padding: 5px;
+	padding-left: 10px;
+}
 
 #entitySettings {
-	background-color: #111;
+	background-color: rgba(0,0,0,0.95);
+	margin-top: 1px;
 	display: none;
 }
 
 #entityDefinitions {
-	margin-top: 10px;
-	border-top: 1px solid #333;
-	height: 220px;
+	max-height: 220px;
 	overflow: auto;
 }
 
 div.entityDefinition {
 	color: #aaa;
 	padding: 2px 0;
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 	cursor: pointer;
 }
 
 div.entityDefinition:hover {
-	background-color: #333;
+	background-color: rgba(255,255,255,0.1);
 }
 
 div.entityDefinition .key {
-	width: 55%;
+	width: 50%;
 	display: block;
 	float: left;
 	margin: 0 0px 0 0;
@@ -186,7 +259,6 @@ div.entityDefinition .value {
 	padding: 0 0 0 2px;
 	color: #fff;
 }
-
 
 dl#entityDefinitionInput {
 	padding: 8px 0;
@@ -208,84 +280,60 @@ dl#entityDefinitionInput dd {
 }
 
 #entityKey, #entityValue {
-	width: 95px;
 }
 
 #entityMenu {
-	background-color: #111;
+	background-color: rgba(0,0,0,0.9);
 	display: none;
 	position: absolute;
-	border: 1px solid #333;
-	border-bottom: 5px solid #333;
 	min-width: 100px;
+	max-height:300px;
+	overflow-y: scroll;
+	-webkit-box-shadow:0px 0px 10px rgba(0,0,0,1);
 }
 
 #entityMenu div {
-	padding: 2px;
+	padding: 3px;
+	padding-left: 8px;
 	color: #fff;
 	cursor: pointer;
+	border-top: 1px solid rgba(255,255,255,0);
+	border-bottom: 1px solid rgba(255,255,255,0);
+	-webkit-transition: 0.1s linear;
 }
 
 #entityMenu div:hover {
-	background-color: #444;
+	background-color: rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
-
-
 
 /* --- Dialogs ------------------------------------------------------------------ */
 
 .selectFileDialog {
-	background-color: #111;
+	background-color: rgba(0,0,0,0.9);
+	border: 1px solid white;
+	border-top: 1px solid rgba(255,255,255,0.4);
 	display: none;
 	position: absolute;
 	overflow: hidden;
-	border: 1px solid #333;
-	border-top: 0;
-	border-bottom: 5px solid #333;;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,1);
 }
 
 .selectFileDialog a {
-	padding: 2px;
+	padding: 4px;
 	color: #fff;
 	display: block;
 	text-decoration: none;
+	border-top: 1px solid rgba(255,255,255,0);
+	border-bottom: 1px solid rgba(255,255,255,0);
 }
 
 .selectFileDialog a:hover {
-	background-color: #444;
+	background-color: rgba(255,255,255,0.2);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
-
-div.console {
-	position: absolute;
-	top: 0;
-	left: 1px;
-	height: 0;
-	background-color: rgba(0, 0, 0, 0.7);
-	font-family: "Bitstream Vera Sans Mono", "Monaco", "Lucida Console", "Courier New", monospaced;
-	font-size: 12px;
-	overflow: hidden;
-}
-
-div.consoleMessages {
-	overflow: auto;
-	height: 100%;
-}
-
-div.console input {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 12px;
-	padding: 2px 0;
-	border: 0;
-	background-color: rgba(0,0,0,0.2);
-	color: #ceff36;
-	font-family: "Bitstream Vera Sans Mono", "Monaco", "Lucida Console", "Courier New", monospaced;
-	font-size: 12px;
-}
-
-
 
 div.modalDialogBackground {
 	background-color: rgba(0,0,0,0.7);
@@ -295,38 +343,116 @@ div.modalDialogBackground {
 	top: 0;
 	left: 0;
 	display: none;
+	z-index: 100;
 }
 
 div.modalDialogBox {
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	width: 400px;
-	margin-left: -220px;
-	background-color: #222;
+	width: 300px;
+	margin-left: -170px;
+	background-color: rgba(0,0,0,0.9);
+	border: 1px solid rgb(100,100,100);
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,1);
 	position: absolute;
 	top: 20%;
 	left: 50%;
 	padding: 20px;
-	border: 1px solid #333;
 }
 
 div.modalDialogText {
-	font-size: 120%;
+	font-size: 180%;
+	font-weight: bold;
 }
 
 div.modalDialogButtons {
 	margin-top: 20px;
-	text-align: left;
+	text-align: right;
 }
 
 div.modalDialogButtons input.button {
 	min-width: 100px;
 	text-align: center;
-	margin-right: 10px;
+	margin-left: 10px;
 }
 
 input.modalDialogPath {
 	margin-top: 20px;
 	width: 100%;
+	outline: none;
 }
+
+input.modalDialogPath:focus {
+	outline: none;
+	border: 1px solid rgb(100,100,100);
+}
+
+#headerMenu {
+	position: relative;
+	z-index: 10;
+	height: 47px;
+	width: 100%;
+	background-color: #000;
+}
+
+#headerMenu span.headerTitle {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 200%;
+	padding-left: 20px;
+	padding-top: 7px;
+	font-family: Helvetica, arial, sans-serif;
+	color: rgba(255,255,255,0.25);
+}
+
+#headerMenu span.unsavedTitle {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 240%;
+	padding-left: 0px;
+	color: #cc0000;
+	font-family: Helvetica, arial, sans-serif;
+}
+
+#headerMenu span.headerFloat {
+	float: right;
+}
+
+input#toggleSidebar {
+	width: 200px;
+	height: 47px;
+	text-indent: -99999px;
+	background: url(arrow.png) 50% -37px no-repeat;
+	-webkit-transition: 0s linear;
+	opacity: 0.25;
+	padding: 0px;
+}
+
+input#toggleSidebar.active{
+	background-position: 50% 10px;
+}
+
+input[type="checkbox"] {
+	position: relative; 
+	margin: 0; 
+	border: 0; 
+	width: 10px; 
+	height: 10px;
+	display: inline-block; 
+	-webkit-appearance: none; 
+	-webkit-transition: 0.1s linear;
+}
+input[type="checkbox"] { 
+	background-color:rgba(255,255,255,0.2); 
+}
+input[type="checkbox"]:checked { 
+	background-color: rgba(255,255,255,1); 
+}
+input[type="checkbox"]:hover { 
+	cursor: pointer; 
+}
+
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment { display: block; height: 2px; }
+::-webkit-scrollbar-button:vertical:increment { background-color: transparent; }
+::-webkit-scrollbar-track-piece { background-color: rgba(0,0,0,0); }
+::-webkit-scrollbar-thumb:vertical { background-color: rgba(255,255,255,1); }

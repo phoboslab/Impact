@@ -10,36 +10,37 @@
 	<script src="lib/weltmeister/weltmeister.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
+<div id="headerMenu">
+	<span class="headerTitle"></span>
+	<span class="unsavedTitle"></span>
+	<span class="headerFloat">
+		<input type="button" id="levelSave" value="Save" class="button"/>
+		<input type="button" id="levelSaveAs" value="Save As" class="button"/>
+		<input type="button" id="levelNew" value="New" class="button"/>
+		<input type="button" id="levelLoad" value="Load" class="button"/>
+		<input type="button" id="reloadImages" value="Reload Images" title="Reload Images" class="button"/>
+		<input type="button" id="toggleSidebar" value="Toggle Sidebar" title="Toggle Sidebar" class="button"/>
+	</span>
+</div>
 
 <div id="editor">
-	<div id="entityMenu">
-		<h2>New Entity</h2>
-	</div>
+	<div id="entityMenu"></div>
+	
 	<canvas id="canvas"></canvas>
 	
 	<div id="menu">
-		<div>
-			<input type="button" id="levelSave" value="Save" class="button"/>
-			<input type="button" id="levelLoad" value="Load" class="button"/>
-			<input type="button" id="reloadImages" value="&#x21BA;" title="Reload Images" class="button"/>
-		</div>
-		
-		
 		<div id="layerContainer">
 			<h2>Layers</h2>
-			<div id="layerEntities" class="layer">
-				<span class="visible" title="Toggle Visibility (Shift+0)">&#x25a3;</span>
-				<span class="hotkey">0: </span>
-				<span class="name">entities</span>
-			</div>
-			<div id="layers"></div>
 			<div id="layerButtons">
 				<div class="button" id="buttonAddLayer" title="Add Layer">+</div>
-				<div class="button" id="buttonRemoveLayer" title="Remove Layer">x</div>
-				<div class="clear"></div>
+			</div>
+			<div id="layers">
+				<div id="layerEntities" class="layer">
+					<span class="visible specialVis checkedVis" title="Toggle Visibility (Shift+0)"></span>
+					<span class="name">entities</span>
+				</div>
 			</div>
 		</div>
-		
 		
 		
 		<div id="layerSettings">
@@ -50,7 +51,7 @@
 				<dt>Tilesize:</dt><dd><input type="text" class="number" id="layerTilesize"/></dd>
 				<dt>Dimensions:</dt>
 				<dd>
-					<input type="text" class="number" id="layerWidth"/>&#xd7;<input type="text" class="number" id="layerHeight"/>
+					<input type="text" class="number" id="layerWidth"/> &times; <input type="text" class="number" id="layerHeight"/>
 				</dd>
 				<dt>Distance:</dt><dd><input type="text" class="number" id="layerDistance"/></dd>
 				<dd>
@@ -61,7 +62,10 @@
 					<input type="checkbox" id="layerLinkWithCollision"/>
 					<label for="layerLinkWithCollision">Link with Collision</label>
 				</dd>
-				<dd><input type="button" id="buttonSaveLayerSettings" value="Apply Changes" class="button"/></dd>
+				<dd>
+					<input type="button" id="buttonSaveLayerSettings" value="Apply Changes" class="button"/>
+					<input type="button" id="buttonRemoveLayer" value="Delete" class="button"/>
+				</dd>
 			</dl>
 		</div>
 		
@@ -77,10 +81,8 @@
 				<dt>Value:</dt><dd><input type="text" class="text" id="entityValue"/></dd>
 			</dl>
 		</div>
-		
 	</div>
 	
 </div>
-
 </body>
 </html>
