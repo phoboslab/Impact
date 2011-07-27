@@ -51,6 +51,8 @@ label {
 	cursor: pointer;
 }
 
+
+
 /* --- Input ------------------------------------------------------------------ */
 
 input {
@@ -116,6 +118,8 @@ input#levelSaveAs { margin-right: 10px; }
 input#levelLoad { margin-right: 10px; }
 input#reloadImages {margin-right: 10px;}
 
+
+
 /* --- Layout ------------------------------------------------------------------ */
 
 #editor {
@@ -135,6 +139,8 @@ input#reloadImages {margin-right: 10px;}
 	top:0px;
 	right:0px;
 }
+
+
 
 /* --- Layers ------------------------------------------------------------------ */
 
@@ -219,7 +225,10 @@ input#reloadImages {margin-right: 10px;}
 	display: none;
 }
 
+
+
 /* --- Entities ------------------------------------------------------------------ */
+
 h3#entityClass {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	padding: 5px;
@@ -313,6 +322,8 @@ dl#entityDefinitionInput dd {
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
+
+
 /* --- Dialogs ------------------------------------------------------------------ */
 
 .selectFileDialog {
@@ -323,6 +334,9 @@ dl#entityDefinitionInput dd {
 	position: absolute;
 	overflow: hidden;
 	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,1);
+	
+	max-height: 300px;
+	overflow-y: scroll;
 }
 
 .selectFileDialog a {
