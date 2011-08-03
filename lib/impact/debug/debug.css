@@ -1,0 +1,141 @@
+.ig_debug {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #000;
+	border-top: 2px solid #f57401;
+	font-size: 12px;
+	color: #fff;
+}
+
+.ig_debug_panel_menu {
+	height: 28px;
+	background-color: #222;
+}
+
+.ig_debug_panel_menu div {
+	float: left;
+	height: 22px;
+	padding: 6px 8px 0 8px;
+	border-right: 1px solid #333;
+}
+
+.ig_debug_panel_menu .ig_debug_head  {
+	font-weight: bold;
+	color: #888;
+}
+
+.ig_debug_menu_item:hover {
+	cursor: pointer;
+	background-color: #fff;
+	color: #000;
+}
+
+.ig_debug_menu_item.active, .ig_debug_menu_item.active:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.ig_debug_stats {
+	position: absolute;
+	right: 0;
+	top: 0;
+	float: right;
+	color: #888;
+	border-left: 1px solid #333;
+	text-align: right;
+}
+
+.ig_debug_stats span {
+	width: 3em;
+	display:inline-block;
+	color: #fff !important;
+	margin-right: 0.2em;
+	margin-left: 0.3em;
+	font-family: bitstream vera sans mono, courier new;
+}
+
+.ig_debug_panel {
+	height: 152px;
+	overflow: auto;
+	position: relative;
+}
+
+.ig_debug_panel canvas {
+	border-bottom: 1px solid #444;
+}
+
+.ig_debug_panel .ig_debug_panel {
+	padding: 8px;
+	height: auto;
+	float: left;
+	background-color: #000;
+	border-right: 2px solid #222;
+}
+
+.ig_debug_option {
+	padding: 2px 0 2px 8px;
+	cursor: pointer;
+}
+
+.ig_debug_option:first-child {
+	margin-top: 8px;
+}
+
+.ig_debug_option:hover {
+	background-color: #111;
+}
+
+.ig_debug_graph_mark {
+	position: absolute;
+	color: #888;
+	left: 4px;
+	font-size: 10px;
+	margin-top: -12px;
+}
+
+.ig_debug_legend {
+	color: #ccc;
+}
+
+.ig_debug_label_mark {
+	display: inline-block;
+	width: 10px; 
+	height: 10px; 
+	margin-right: 4px;
+	-webkit-transition: 0.1s linear;
+}
+
+.ig_debug_legend_color {
+	display: inline-block;
+	width: 6px; 
+	height: 10px; 
+	margin-right: 4px; 
+	margin-left: 16px; 
+}
+
+.ig_debug_legend_number {
+	width: 3em;
+	display: inline-block;
+	text-align: right;
+	font-family: bitstream vera sans mono, courier new;
+	color: #fff;
+	margin-right: 0.2em;
+}
+
+
+.ig_debug_map_container {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #888;
+}
+
+.ig_debug_map_container canvas {
+	position: absolute;
+}
+
+.ig_debug_map_screen {
+	position: absolute;
+	border: 1px solid #f0f;
+}
