@@ -13,7 +13,10 @@
 
 .ig_debug_panel_menu {
 	height: 28px;
-	background-color: #222;
+	background: #222;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0,#000000), color-stop(1,#333));
+	background: -moz-linear-gradient(center bottom, #000000 0%, #333 100%);
+	background: -o-linear-gradient(#333, #000000);
 }
 
 .ig_debug_panel_menu div {
@@ -57,7 +60,6 @@
 	margin-left: 0.3em;
 	font-family: bitstream vera sans mono, courier new;
 	white-space: nowrap;
-	overflow: hidden;
 }
 
 .ig_debug_panel {
@@ -109,6 +111,7 @@
 	height: 10px; 
 	margin-right: 4px;
 	-webkit-transition: 0.1s linear;
+	-moz-transition: 0.1s linear;
 }
 
 .ig_debug_legend_color {
