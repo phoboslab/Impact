@@ -70,7 +70,7 @@ class Baker {
 	
 	
 	protected function load( $path ) {
-		if( $this->loaded[$path] ) {
+		if( isset($this->loaded[$path]) ) {
 			return '';
 		}
 		
@@ -118,7 +118,7 @@ class Baker {
 		$this->definesModule  = true;
 		
 		$moduleName = $matches[1];
-		$requiredFiles = $matches[3];
+		$requiredFiles = isset($matches[3]) ? $matches[3] : '';
 		$requiredCode = '';
 		
 		if( $requiredFiles ) {			
