@@ -116,6 +116,11 @@ input#levelSaveAs { margin-right: 10px; }
 input#levelLoad { margin-right: 10px; }
 input#reloadImages {margin-right: 10px;}
 
+input:disabled {
+	background-color: #555;
+	color: #888;
+}
+
 /* --- Layout ------------------------------------------------------------------ */
 
 #editor {
@@ -459,6 +464,9 @@ input[type="checkbox"]:checked {
 }
 input[type="checkbox"]:hover { 
 	cursor: pointer; 
+}
+input[type="checkbox"]:disabled {
+	background-color: rgba(255,255,255,0.1); 
 }
 
 ::-webkit-scrollbar { width: 2px; }
