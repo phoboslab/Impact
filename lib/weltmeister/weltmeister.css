@@ -432,6 +432,16 @@ input.modalDialogPath:focus {
 	float: right;
 }
 
+div#zoomIndicator {
+	font-weight: bold;
+	font-size: 300%;
+	position: absolute;
+	left: 50px;
+	top: 30px;
+	color: #fff;
+	display: none;
+}
+
 input#toggleSidebar {
 	width: 200px;
 	height: 47px;
