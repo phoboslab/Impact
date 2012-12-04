@@ -8,14 +8,16 @@ SET GAME=lib/game/main.js
 SET OUTPUT_FILE=game.min.js
 
 
-:: Change CWD to Impact's base dir and bake!
+:: Change CWD to Impact's base dir
 cd ../
-php tools/bake.php %IMPACT_LIBRARY% %GAME% %OUTPUT_FILE%
 
+
+:: Bake!
+php tools/bake.php %IMPACT_LIBRARY% %GAME% %OUTPUT_FILE%
 
 :: If you dont have the php.exe in your PATH uncomment the
 :: following line and point it to your php.exe
 
-::c:/php/php.exe bake.php %IMPACT_LIBRARY% %GAME% %OUTPUT_FILE%
+::c:/php/php.exe tools/bake.php %IMPACT_LIBRARY% %GAME% %OUTPUT_FILE%
 
 pause
