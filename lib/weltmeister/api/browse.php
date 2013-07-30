@@ -16,8 +16,11 @@ switch( $_GET['type'] ) {
 		break;
 }
 
-$dirs = (array)glob( $dir.'*', GLOB_ONLYDIR );
-$files = (array)glob( $dir.$find, GLOB_BRACE );
+$dirs = glob( $dir.'*', GLOB_ONLYDIR );
+if( $dirs === false ) { $dirs = array(); };
+
+$files = glob( $dir.$find, GLOB_BRACE );
+if( $files === false ) { $files = array(); }
 
 $fileRootLength = strlen( WM_Config::$fileRoot );
 foreach( $files as $i => $f ) {
