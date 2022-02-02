@@ -2,7 +2,7 @@
 require_once( 'config.php' );
 
 $dir = WM_Config::$fileRoot . str_replace( '..', '', $_GET['dir'] );
-if( $dir{strlen($dir)-1} != '/' ) {
+if( $dir[strlen($dir)-1] != '/' ) {
 	$dir .= '/';
 }
 
